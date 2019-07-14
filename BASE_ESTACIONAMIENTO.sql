@@ -11,8 +11,8 @@ CREATE TABLE Vehiculo
 (
 	Num_Placa NVARCHAR(7) NOT NULL
 	CONSTRAINT PK_Vehiculo_Num_Placa PRIMARY KEY CLUSTERED,
-	Hora_Ingreso TIME DEFAULT GETDATE() NOT NULL,
-	Hora_Salida TIME,
+	Hora_Ingreso DATETIME DEFAULT GETDATE() NOT NULL,
+	Hora_Salida DATETIME,
 	Tipo_Vehiculo INT NOT NULL
 )
 GO
@@ -55,6 +55,16 @@ GO
 
 SELECT * FROM Vehiculo
 GO
+
+
+--UPDATE Vehiculo 
+--SET Hora_Salida = GETDATE() WHERE Num_Placa = '123456' 
+--GO
+
+
+--SELECT Hora_Ingreso , DATEDIFF(mi,Hora_Ingreso,Hora_Salida) AS Fecha
+--FROM Vehiculo WHERE Num_Placa = 'Em456' 
+--GO
 
 /*
 USE tempdb
